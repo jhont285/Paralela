@@ -9,7 +9,7 @@ public class ReciprocalArraySumTest extends TestCase {
     final static private int REPEATS = 60;
 
     private static int getNCores() {
-            return Runtime.getRuntime().availableProcessors();
+        return Runtime.getRuntime().availableProcessors() / 2;
     }
 
     /**
@@ -23,11 +23,8 @@ public class ReciprocalArraySumTest extends TestCase {
         final Random rand = new Random(314);
 
         for (int i = 0; i < N; i++) {
-            input[i] = rand.nextInt(100) + 1;
             // No se permiten valores en cero en el arreglo de entrada para evitar la división por cero
-            // if (input[i] == 0.0) {
-            //     i--;
-            // }
+            input[i] = rand.nextInt(100) + 1;
         }
 
         return input;

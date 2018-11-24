@@ -35,55 +35,6 @@ public final class ReciprocalArraySum {
     }
 
     /**
-     * calcula el tamaño de cada trozo o sección, de acuerdo con el número de secciones para crear
-     * a través de un número dado de elementos.
-     *
-     * @param nChunks El número de secciones (chunks) para crear
-     * @param nElements El número de elementos para dividir
-     * @return El tamaño por defecto de la sección (chunk)
-     */
-    private static int getChunkSize(final int nChunks, final int nElements) {
-        // Función techo entera
-        return (nElements + nChunks - 1) / nChunks;
-    }
-
-    /**
-     * Calcula el índice del elemento inclusivo donde la sección/trozo (chunk) inicia,
-     * dado que hay cierto número de secciones/trozos (chunks).
-     *
-     * @param chunk la sección/trozo (chunk) para cacular la posición de inicio
-     * @param nChunks Cantidad de seciiones/trozos (chunks) creados
-     * @param nElements La cantidad de elementos de la sección/trozo que debe atravesarse
-     * @return El indice inclusivo donde esta sección/trozo (chunk) inicia en el conjunto de
-     *         nElements
-     */
-    private static int getChunkStartInclusive(final int chunk,
-            final int nChunks, final int nElements) {
-        final int chunkSize = getChunkSize(nChunks, nElements);
-        return chunk * chunkSize;
-    }
-
-    /**
-     * Calcula el índice del elemento exclusivo que es proporcionado al final de la sección/trozo (chunk),
-     * dado que hay cierto número de secciones/trozos (chunks).
-     *
-     * @param chunk LA sección para calcular donde termina
-     * @param nChunks Cantidad de seciiones/trozos (chunks) creados
-     * @param nElements La cantidad de elementos de la sección/trozo que debe atravesarse
-     * @return El índice de terminación exclusivo para esta sección/trozo (chunk)
-     */
-    private static int getChunkEndExclusive(final int chunk, final int nChunks,
-            final int nElements) {
-        final int chunkSize = getChunkSize(nChunks, nElements);
-        final int end = (chunk + 1) * chunkSize;
-        if (end > nElements) {
-            return nElements;
-        } else {
-            return end;
-        }
-    }
-
-    /**
      * Este pedazo de clase puede ser completada para para implementar el cuerpo de cada tarea creada
      * para realizar la suma de los recíprocos del arreglo en paralelo.
      */
