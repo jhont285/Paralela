@@ -2,9 +2,6 @@ package co.edu.unal.paralela;
 
 import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Clase que contiene los métodos para implementar la suma de los recíprocos de un arreglo usando paralelismo.
